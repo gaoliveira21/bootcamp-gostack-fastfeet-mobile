@@ -1,0 +1,12 @@
+{
+  "name": "fastfeet",
+  "displayName": "fastfeet",
+  "expo": {
+    "name": "fastfeet",
+    "slug": "fastfeet",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
