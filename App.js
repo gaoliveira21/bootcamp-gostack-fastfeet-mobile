@@ -2,13 +2,14 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 
-import SignIn from './src/pages/SignIn';
+// import SignIn from './src/pages/SignIn';
+import Dashboard from './src/pages/Dashboard';
 
 export default function App() {
   return (
     <>
-      <SignIn />
-      <StatusBar style="light" />
+      <Dashboard />
+      <StatusBar style="inverted" />
     </>
   );
 }
