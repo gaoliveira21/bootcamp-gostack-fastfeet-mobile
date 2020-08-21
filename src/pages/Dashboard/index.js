@@ -1,7 +1,19 @@
 import React from 'react';
 import { Text } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import { Container, Header, UserInfo, Avatar, UserText, Name } from './styles';
+import {
+  Container,
+  Header,
+  UserInfo,
+  Avatar,
+  UserText,
+  Name,
+  PageTitle,
+  Title,
+  Filters,
+  FilterText,
+} from './styles';
 
 const Dashboard = () => {
   return (
@@ -18,8 +30,17 @@ const Dashboard = () => {
             <Name>Gabriel José</Name>
           </UserText>
         </UserInfo>
-        <Text>Sair</Text>
+        <Icon name="logout" color="#E74040" size={24} />
       </Header>
+
+      <PageTitle>
+        <Title>Entregas</Title>
+        <Filters>
+          <FilterText active>Pendentes</FilterText>
+          <Text>{'  '}</Text>
+          <FilterText>Entregues</FilterText>
+        </Filters>
+      </PageTitle>
     </Container>
   );
 };
