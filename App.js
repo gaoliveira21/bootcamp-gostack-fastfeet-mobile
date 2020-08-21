@@ -1,15 +1,15 @@
 /* eslint-disable react/style-prop-object */
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
+import 'react-native-gesture-handler';
+import { StatusBar } from 'expo-status-bar';
 
-// import SignIn from './src/pages/SignIn';
-import Profile from './src/pages/Profile';
+import Routes from './src/routes';
 
 export default function App() {
   return (
     <>
-      <Profile />
-      <StatusBar style="inverted" />
+      <Routes />
+      <StatusBar style="auto" />
     </>
   );
 }

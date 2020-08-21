@@ -14,7 +14,7 @@ const SignIn = () => {
 
       <Form>
         <Input placeholder="Informe seu ID de cadastro" />
-        <Button backgroundColor="#82bf18">Entrar no sistema</Button>
+        <Button text="Entrar no sistema" backgroundColor="#82bf18" />
       </Form>
     </Container>
   );
