@@ -1,7 +1,8 @@
 import React from 'react';
-import { Text, TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { Text } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
+import OrderItem from '../OrderItem';
 
 import {
   Container,
@@ -17,8 +18,6 @@ import {
 } from './styles';
 
 const Dashboard = () => {
-  const navigation = useNavigation();
-
   return (
     <Container>
       <Header>
@@ -45,9 +44,7 @@ const Dashboard = () => {
         </Filters>
       </PageTitle>
 
-      <TouchableOpacity onPress={() => navigation.navigate('OrderDetails')}>
-        <Text>Detalhes</Text>
-      </TouchableOpacity>
+      <OrderItem />
     </Container>
   );
 };
