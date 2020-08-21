@@ -3,12 +3,12 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 
 // import SignIn from './src/pages/SignIn';
-import Dashboard from './src/pages/Dashboard';
+import Profile from './src/pages/Profile';
 
 export default function App() {
   return (
     <>
-      <Dashboard />
+      <Profile />
       <StatusBar style="inverted" />
     </>
   );

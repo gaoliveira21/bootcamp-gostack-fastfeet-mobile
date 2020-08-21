@@ -1,13 +1,9 @@
 import React from 'react';
 import { Image } from 'react-native';
 
-import {
-  Container,
-  Form,
-  Input,
-  SubmitButton,
-  SubmitButtonText,
-} from './styles';
+import Button from '../../components/Button';
+
+import { Container, Form, Input } from './styles';
 
 import logo from '../../assets/logo.png';
 
@@ -18,9 +14,7 @@ const SignIn = () => {
 
       <Form>
         <Input placeholder="Informe seu ID de cadastro" />
-        <SubmitButton>
-          <SubmitButtonText>Entrar no sistema</SubmitButtonText>
-        </SubmitButton>
+        <Button backgroundColor="#82bf18">Entrar no sistema</Button>
       </Form>
     </Container>
   );

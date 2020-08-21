@@ -20,17 +20,3 @@ export const Input = styled.TextInput`
   border-radius: 4px;
   margin-bottom: 15px;
 `;
-
-export const SubmitButton = styled.TouchableOpacity`
-  align-self: stretch;
-  background: #82bf18;
-  height: 45px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-`;
-
-export const SubmitButtonText = styled.Text`
-  color: #fff;
-  font-weight: bold;
-`;
