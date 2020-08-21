@@ -45,6 +45,7 @@ const Dashboard = () => {
       </PageTitle>
 
       <OrderItem />
+      <OrderItem />
     </Container>
   );
 };
