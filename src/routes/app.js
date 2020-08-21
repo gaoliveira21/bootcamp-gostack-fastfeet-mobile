@@ -1,16 +1,56 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import { TouchableOpacity } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createStackNavigator } from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import Dashboard from '../pages/Dashboard';
+import Dashboard from '../pages/Order/Dashboard';
 import Profile from '../pages/Profile';
 
-const { Navigator, Screen } = createBottomTabNavigator();
+import Details from '../pages/Order/Details';
+
+const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
+
+const OrderRoutes = () => {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerTransparent: true,
+        headerTintColor: '#fff',
+        headerLeftContainerStyle: {
+          marginLeft: 20,
+        },
+      }}
+    >
+      <Stack.Screen
+        name="Dashboard"
+        component={Dashboard}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Details"
+        component={Details}
+        options={({ navigation }) => ({
+          title: 'Detalhes da encomenda',
+          headerTitleAlign: 'center',
+          headerLeft: () => (
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+              <Icon name="chevron-left" size={25} color="#fff" />
+            </TouchableOpacity>
+          ),
+        })}
+      />
+    </Stack.Navigator>
+  );
+};
 
 const AppRoutes = () => {
   return (
-    <Navigator
+    <Tab.Navigator
       tabBarOptions={{
         style: {
           borderTopWidth: 0,
@@ -35,9 +75,9 @@ const AppRoutes = () => {
         activeTintColor: '#7D40E7',
       }}
     >
-      <Screen
-        name="Dashboard"
-        component={Dashboard}
+      <Tab.Screen
+        name="Order"
+        component={OrderRoutes}
         options={{
           tabBarLabel: 'Entregas',
           tabBarIcon: ({ color, size }) => {
@@ -45,7 +85,7 @@ const AppRoutes = () => {
           },
         }}
       />
-      <Screen
+      <Tab.Screen
         name="Profile"
         component={Profile}
         options={{
@@ -55,7 +95,7 @@ const AppRoutes = () => {
           },
         }}
       />
-    </Navigator>
+    </Tab.Navigator>
   );
 };
 
