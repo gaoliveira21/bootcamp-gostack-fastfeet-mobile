@@ -9,6 +9,7 @@ import Dashboard from '../pages/Order/Dashboard';
 import Profile from '../pages/Profile';
 
 import Details from '../pages/Order/Details';
+import NewProblem from '../pages/Order/NewProblem';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -36,6 +37,20 @@ const OrderRoutes = () => {
         component={Details}
         options={({ navigation }) => ({
           title: 'Detalhes da encomenda',
+          headerTitleAlign: 'center',
+          headerLeft: () => (
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+              <Icon name="chevron-left" size={25} color="#fff" />
+            </TouchableOpacity>
+          ),
+        })}
+      />
+
+      <Stack.Screen
+        name="NewProblem"
+        component={NewProblem}
+        options={({ navigation }) => ({
+          title: 'Informar problema',
           headerTitleAlign: 'center',
           headerLeft: () => (
             <TouchableOpacity onPress={() => navigation.goBack()}>

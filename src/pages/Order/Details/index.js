@@ -1,9 +1,11 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
+import Header from '../Header';
 
 import {
   Container,
-  Header,
   DeliveryInfo,
   DeliveryStatus,
   TitleRow,
@@ -18,6 +20,8 @@ import {
 } from './styles';
 
 const OrderDetails = () => {
+  const navigation = useNavigation();
+
   return (
     <Container>
       <Header />
@@ -57,7 +61,7 @@ const OrderDetails = () => {
       </DeliveryStatus>
 
       <Actions>
-        <ActionBlock>
+        <ActionBlock onPress={() => navigation.navigate('NewProblem')}>
           <Icon name="close-circle-outline" size={28} color="#E74040" />
           <ActionText>Informar {'\n'} Problema</ActionText>
         </ActionBlock>
