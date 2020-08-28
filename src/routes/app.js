@@ -11,6 +11,7 @@ import Profile from '../pages/Profile';
 import Details from '../pages/Order/Details';
 import NewProblem from '../pages/Order/NewProblem';
 import Problems from '../pages/Order/Problems';
+import Confirm from '../pages/Order/Confirm';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -66,6 +67,20 @@ const OrderRoutes = () => {
         component={Problems}
         options={({ navigation }) => ({
           title: 'Visualizar problemas',
+          headerTitleAlign: 'center',
+          headerLeft: () => (
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+              <Icon name="chevron-left" size={25} color="#fff" />
+            </TouchableOpacity>
+          ),
+        })}
+      />
+
+      <Stack.Screen
+        name="Confirm"
+        component={Confirm}
+        options={({ navigation }) => ({
+          title: 'Confirmar entrega',
           headerTitleAlign: 'center',
           headerLeft: () => (
             <TouchableOpacity onPress={() => navigation.goBack()}>
