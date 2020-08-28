@@ -65,7 +65,7 @@ const OrderDetails = () => {
           <Icon name="close-circle-outline" size={28} color="#E74040" />
           <ActionText>Informar {'\n'} Problema</ActionText>
         </ActionBlock>
-        <ActionBlock>
+        <ActionBlock onPress={() => navigation.navigate('Problems')}>
           <Icon name="information-outline" size={28} color="#E7BA40" />
           <ActionText>Visualizar {'\n'} Problemas</ActionText>
         </ActionBlock>
