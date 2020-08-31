@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 import { Container, ButtonText } from './styles';
 
-const Button = ({ text, backgroundColor }) => {
+const Button = ({ text, backgroundColor, onPress }) => {
   return (
-    <Container background={backgroundColor}>
+    <Container background={backgroundColor} onPress={onPress}>
       <ButtonText>{text}</ButtonText>
     </Container>
   );
@@ -14,6 +14,11 @@ const Button = ({ text, backgroundColor }) => {
 Button.propTypes = {
   backgroundColor: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
+  onPress: PropTypes.func,
+};
+
+Button.defaultProps = {
+  onPress: () => {},
 };
 
 export default Button;
